@@ -1,0 +1,7 @@
+<div *ngIf="device$ | async as device">
+    <p><strong>Name: </strong>{{ device.name }}</p>
+    <p><strong>Category: </strong>{{ device.category }}</p>
+    <p><strong>Date: </strong>{{ device.date }}</p>
+
+    <button routerLink="/"> Go Back</button>
+</div>

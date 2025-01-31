@@ -1,0 +1,32 @@
+<div>
+    <form action="" [formGroup]="deviceForm" (ngSubmit)="addDevice()">
+        <div>
+            <label for="name"> Name: </label>
+            <input type="text" formControlName="name" id="name">
+            <div *ngIf="deviceForm.get('name')?.invalid && deviceForm.get('name')?.touched">
+                <small>Name is required</small>
+            </div>
+        </div>
+
+
+        <div>
+            <label for="category"> Category: </label>
+            <input type="text" formControlName="category" id="category">
+            <div *ngIf="deviceForm.get('category')?.invalid && deviceForm.get('category')?.touched">
+                <small>Category is required</small>
+            </div>
+        </div>
+
+
+        <div>
+            <label for="date"> Date: </label>
+            <input type="text" formControlName="date" id="date">
+            <div *ngIf="deviceForm.get('date')?.invalid && deviceForm.get('date')?.touched">
+                <small>date is required</small>
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="deviceForm.invalid">Add Device</button>
+
+    </form>
+</div>

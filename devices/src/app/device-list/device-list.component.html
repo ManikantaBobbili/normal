@@ -1,0 +1,48 @@
+<div>
+    <H2>Devices Details</H2>
+    <br>
+    <button routerLink="/add">Add Device </button>
+    <br>
+    <br>
+<!-- Searching  -->
+    <div>
+        <input type="text" [(ngModel)]="searchText" placeholder="Search By Name or Category" (input)="search()">
+
+    </div>
+
+
+    <!--  -->
+
+    <!-- Sorting -->
+
+    <br>
+    <div>
+        <select name="sorting" [(ngModel)]="sortBy" (change)="onSort()">
+            <option value="" disabled selected hidden>Choose an Option</option>
+            <option value="name">Name</option>
+            <option value="category">Category</option>
+        </select>
+
+        <button (click)="onToggel()">Reverse order</button>
+    </div>
+
+
+    
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th colspan="3">Actions</th>
+        </tr>
+        <tr *ngFor="let device of searchDevices$ | async">
+            <td>{{ device.name}}</td>
+            <td>{{ device.category }}</td>
+            <td>{{ device.date }}</td>
+            <td><button [routerLink]="['/view',device.id]">Details</button></td>
+            <td><button (click)="deleteDevice(device.id)">Delete</button></td>
+            <td><button (click)="editDevice(device.id)">Edit</button></td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,40 @@
+{
+  "devices": [
+    {
+      "name": "Laptop",
+      "category": "Computers",
+      "date": "2023-05-14",
+      "id": "1"
+    },
+    {
+      "name": "Smartphone",
+      "category": "Mobile",
+      "date": "2023-02-28",
+      "id": "2"
+    },
+    {
+      "name": "ZT",
+      "category": "Tablets",
+      "date": "2023-07-22",
+      "id": "3"
+    },
+    {
+      "name": "Smart",
+      "category": "Wearable",
+      "date": "2023-01-15",
+      "id": "4"
+    },
+    {
+      "name": "Gaming",
+      "category": "Entertainment",
+      "date": "2023-11-05",
+      "id": "5"
+    },
+    {
+      "id": "7",
+      "name": "Bluetooth Speaker",
+      "category": "Audio",
+      "date": "2023-03-20"
+    }
+  ]
+}
