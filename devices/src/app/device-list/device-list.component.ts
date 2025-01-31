@@ -50,19 +50,44 @@ export class DeviceListComponent  implements OnInit{
     }
   }
 
+  // onSort(){
+  //   if(this.sortBy){
+  //     this.searchDevices$ = this.devices$.pipe(map((devices)=>{
+  //     return devices.sort((a:any,b:any)=>{
+  //       if(a[this.sortBy]<(b[this.sortBy])){
+  //         return this.isAsc? -1:1;
+  //       }else if(a[this.sortBy]>b[this.sortBy]){
+  //         return this.isAsc? 1:1;
+  //       }else{
+  //         return 0;
+  //       }
+  //     })
+  //     }))
+  //   }else{
+  //     this.searchDevices$ = this.devices$
+  //   }
+  // }
+
   onSort(){
-    if(this.sortBy){
-      this.searchDevices$ = this.devices$.pipe(map((devices)=>{
-      return devices.sort((a:any,b:any)=>{
-        if(a[this.sortBy]<(b[this.sortBy])){
-          return this.isAsc? -1:1;
-        }else{
-          return this.isAsc? 1:1;
-        }
-      })
-      }))
+    if (this.sortBy) {
+      this.searchDevices$ = this.devices$.pipe(
+        map((devices) => {
+          return devices.sort((a: any, b: any) => {
+            if (a[this.sortBy] < b[this.sortBy]) {
+              return this.isAsc ? -1 : 1;
+            } else if (a[this.sortBy] > b[this.sortBy]) {
+              return this.isAsc ? 1 : -1;
+            } else {
+              return 0;
+            }
+          });
+        })
+      );
+    } else {
+      this.searchDevices$ = this.devices$;
     }
   }
+  
 
   onToggel(){
     this.isAsc =!this.isAsc;
